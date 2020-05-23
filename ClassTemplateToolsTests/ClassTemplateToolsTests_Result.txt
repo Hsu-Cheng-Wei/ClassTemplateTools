@@ -1,0 +1,18 @@
+﻿----------------------------
+new HashSet<Department>()
+{
+	new Department()
+	{
+		DepartmentId = 1,
+		DepartmentName = "左A",
+		Employees = new[]
+		{
+			new Employee()
+			{
+				EmployeeId = Guid.Parse("becc484a-d8f7-4569-ad35-720fe7a454fb"),
+				Name = "Jason",
+			},
+		},
+	},
+}
+----------------------------

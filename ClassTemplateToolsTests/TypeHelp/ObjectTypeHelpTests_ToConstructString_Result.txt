@@ -1,0 +1,7 @@
+﻿new Production()
+{
+	Id = Guid.Parse("47627a86-846c-4f70-ab04-7d40eb6227ec"),
+	Name = "Apple",
+	Count = 4,
+	Price = 2.5F,
+}
