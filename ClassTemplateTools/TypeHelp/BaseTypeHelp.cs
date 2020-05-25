@@ -8,7 +8,7 @@ namespace ClassTemplateTools.TypeHelp
         public virtual string BaseName(object obj)
         => GetType().Name.Replace("TypeHelp", "").ToLower();
 
-        public abstract string ReassemblyStringInBrackets(IEnumerable<string> str, string title);
+        public abstract string ReassemblyStringInBrackets(IEnumerable<string> strs, string title);
 
         public abstract string ToConstructString(object obj);
     }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using Xunit;
 
-namespace ClassTemplateToolsTests.TypeHelp
+namespace ClassTemplateToolsTests.ObjectType.TypeHelp
 {
     public class Production
     {
@@ -23,7 +23,7 @@ namespace ClassTemplateToolsTests.TypeHelp
     public class ObjectTypeHelpTests
     {
         private string CurrentFolder => Path.Combine(
-            Path.GetFullPath(@"..\..\..\"), "TypeHelp/ObjectTypeHelpTests_ToConstructString_Result.txt");
+            Path.GetFullPath(@"..\..\..\"), "TypeHelp/ObjectType/ObjectTypeHelpTests_ToConstructString_Result.txt");
 
         [Fact]
         public void BaseName()
