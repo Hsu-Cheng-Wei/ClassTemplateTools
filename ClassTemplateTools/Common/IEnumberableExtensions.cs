@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ClassTemplateTools.Common
 {
@@ -17,6 +19,22 @@ namespace ClassTemplateTools.Common
 
                 yield return t;
             }
+        }
+
+        public static bool Any(this IEnumerable ts)
+        => ts.GetEnumerator().MoveNext();
+
+        public static Type GetEnumerableMemberType(this IEnumerable ts)
+        {
+            if (!ts.Any())
+                throw new ArgumentNullException($"{typeof(IEnumerable)} can't empty");
+
+            if (ts.GetType().IsGenericType)
+                return ts.GetType().GetGenericArguments()[0];
+
+            var etor = ts.GetEnumerator();
+            etor.MoveNext();
+            return etor.Current.GetType();
         }
     }
 }

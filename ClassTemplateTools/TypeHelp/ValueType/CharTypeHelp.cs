@@ -2,12 +2,10 @@
 
 namespace ClassTemplateTools.TypeHelp.ValueType
 {
-    [TypeName("Decimal")]
-    internal class DecimalTypeHelp : ValueTypeHelp
+    [TypeName("Char")]
+    internal class CharTypeHelp : ValueTypeHelp
     {
         public override string ToConstructString(object obj)
-        {
-            return base.ToConstructString(obj) + 'M';
-        }
+        => $"\'{obj.ToString()}\'";
     }
 }

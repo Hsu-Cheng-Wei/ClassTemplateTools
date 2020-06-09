@@ -1,4 +1,5 @@
-﻿using ClassTemplateTools.Contract;
+﻿using ClassTemplateTools.Common;
+using ClassTemplateTools.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,5 +57,22 @@ namespace ClassTemplateTools
 
         public static string DumpToString(this object obj)
         => obj.GetTypeHelp().ToConstructString(obj);
+
+        public static string DumpEnityToString(this object obj)
+        => obj.RemoveAtVirtualProperty().DumpToString();
+
+        public static string DumpEnityToString(this IEnumerable<object> objs)
+        {
+            var result = new List<object>();
+            var hash = new HashSet<object>();
+            foreach (var obj in objs)
+                result.Add(obj.RemoveAtVirtualProperty(hash));
+
+            result = result.Where(t => t != null).ToList();
+            if (!result.Any())
+                return "";
+
+            return result.DumpToString();
+        }
     }
 }

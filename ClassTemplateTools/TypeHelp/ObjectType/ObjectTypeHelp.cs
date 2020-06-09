@@ -2,6 +2,7 @@
 using ClassTemplateTools.Contract;
 using ClassTemplateTools.TypeHelp.Brackets;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,10 @@ namespace ClassTemplateTools.TypeHelp.ObjectType
                     continue;
                 if (pType.IsValueType && value.Equals(Activator.CreateInstance(pType)))
                     continue;
+
+                if(typeof(IEnumerable).IsAssignableFrom(pType))
+                    if(!((IEnumerable)value).GetEnumerator().MoveNext())
+                        continue;
 
                 var despcript = value.DumpToString()
                     .SplitByNewLine();

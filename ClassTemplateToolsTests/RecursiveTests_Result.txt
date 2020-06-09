@@ -1,0 +1,20 @@
+﻿----------------------------
+new Employee()
+{
+	EmployeeId = "77011",
+	UserId = Guid.Parse("190b8133-77d7-4c47-b5cd-6ece1a4d5fb8"),
+	DepartmentId = 1,
+	PositionId = 3,
+	EmailAddr = "wulj@boltun.com.tw",
+	TelExt = "15223",
+	EmployeeCardId = "0000000899",
+	SalaryTypeId = 1,
+	Department = new Department()
+	{
+		DepartmentId = 1,
+		CompanyId = 1,
+		DepartmentName = "總經理室",
+		OracleDepartmentId = "1",
+	},
+}
+----------------------------
